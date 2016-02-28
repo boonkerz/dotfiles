@@ -11,6 +11,12 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
+if [ "$TERM" = "xterm" ]; then
+  export TERM=xterm-256color
+fi
+alias tmux='tmux -2'  # for 256color
+alias tmux='tmux -u'  # to get rid of unicode rendering problem
+
 alias v="nvim"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
