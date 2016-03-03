@@ -4,3 +4,48 @@ set -g status-utf8 on
 set-option -g default-shell $SHELL
 set -g default-terminal "xterm-256color"
 set-option -ga terminal-overrides ',xterm-256color:Tc'
+
+
+unbind C-b
+set-option -g prefix C-y
+bind-key C-y send-prefix
+
+set -g base-index 1
+set -s escape-time 0
+# don't rename windows automatically
+set-option -g allow-rename off
+
+set -g mode-mouse off
+set -g mouse-select-pane off
+set -g mouse-resize-pane off
+
+
+# split panes using | and -
+bind | split-window -h
+bind - split-window -v
+unbind '"'
+unbind %
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+unbind &
+bind x kill-pane
+bind X kill-window
+bind-key r command-prompt "rename-window %%"
+
+bind-key c command-prompt -p "Name of new window: " "new-window -n '%%'"
+bind-key w choose-window
+
+bind -r H resize-pane -L 5 
+bind -r J resize-pane -D 5 
+bind -r K resize-pane -U 5 
+bind -r L resize-pane -R 5
+
+bind -r R source-file ~/.tmux.conf
+
+source ~/.local/lib/python3.4/site-packages/powerline/bindings/tmux/powerline.conf
+
+

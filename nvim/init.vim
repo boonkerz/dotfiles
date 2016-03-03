@@ -10,8 +10,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'phpvim/phpcd.vim', { 'for': 'php' }
 Plug 'vim-scripts/progressbar-widget' " used for showing the index progresPlug 'phpvim/phpcd.vim', { 'for': 'php' }
+Plug 'qbbr/vim-twig'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
 Plug 'ryanoasis/vim-devicons'
-
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 syntax enable
 colorscheme OceanicNext
@@ -27,7 +32,17 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='oceanicnext'
-" let g:airline_theme='base16_solarized'
+set shiftwidth=4
+set tabstop=4
+set clipboard=unnamed
+" esc slow 
+set timeoutlen=1000 ttimeoutlen=0
+" set no case sensitive search
+set nowildignorecase
+
+" Fuzzy Finder
+nnoremap <silent> <C-f> :FZF -m<cr>
+nnoremap <silent> <C-b> :Buffers<cr>
 
 " Icons NERDTree
 set encoding=utf8
@@ -68,4 +83,16 @@ call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#141e23')
 call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#141e23')
 call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#141e23')
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 "}}}
+autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
