@@ -10,9 +10,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'phpvim/phpcd.vim', { 'for': 'php' }
 Plug 'vim-scripts/progressbar-widget' " used for showing the index progresPlug 'phpvim/phpcd.vim', { 'for': 'php' }
+Plug 'mhinz/vim-grepper'
+Plug 'rking/ag.vim'
 Plug 'qbbr/vim-twig'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'Shougo/context_filetype.vim'
 Plug 'jreybert/vimagit'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -34,11 +37,17 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='oceanicnext'
 set shiftwidth=4
 set tabstop=4
-set clipboard=unnamed
+set clipboard=unnamedplus
 " esc slow 
 set timeoutlen=1000 ttimeoutlen=0
 " set no case sensitive search
 set nowildignorecase
+
+" Navi in Windows
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Fuzzy Finder
 nnoremap <silent> <C-f> :FZF -m<cr>
