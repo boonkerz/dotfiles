@@ -56,8 +56,8 @@ nnoremap <silent> <C-b> :Buffers<cr>
 " Icons NERDTree
 set encoding=utf8
 let g:airline_powerline_fonts = 1
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
-
+"set guifont="Sauce Code Pro Medium Nerd Font Complete:h40"
+set guifont=Sauce\ Code\ Powerline:h40
 " NERDTree ------------------------------------------------------------------{{{
 
 map <F4> :NERDTreeToggle<CR>
