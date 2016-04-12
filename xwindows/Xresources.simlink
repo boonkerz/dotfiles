@@ -1,7 +1,7 @@
 Xcursor.theme: DMZ-White
 URxvt.iso14755 : false
-URxvt.font:                xft:Droid Sans Mono for Powerline:NerdFontComplete:pixelsize=16
-URxvt.boldFont:            xft:Sauce Code Pro:NerdFontComplete:pixelsize=14:bold
+URxvt.font:                xft:Sauce Code Pro Medium:pixelsize=15:antialias=true
+URxvt.boldFont:            xft:Sauce Code Pro:pixelsize=14:bold
 URxvt.italicFont:          xft:Sauce Code Pro:NerdFontComplete:pixelsize=14:italic
 URxvt.boldItalicFont:      xft:Sauce Code Pro:NerdFontComplete:pixelsize=14:bold:italic
 ;URxvt.letterSpace:         -1
@@ -34,7 +34,7 @@ URxvt*cursorColor:         #E6EFF7
 
 URxvt.internalBorder:      0
 URxvt.externalBorder:      0
-urxvt.borderLess: true
+urxvt.borderLess: false
 
 URxvt.scrollBar:           false
 
